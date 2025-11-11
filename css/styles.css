@@ -157,31 +157,32 @@ section[id]{
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
-.cta-button-contac{
-    display: inline-block;
-    padding: 12px 30px;
-    border-radius: 50px;
-    background-color: #000000;
-    color: var(--background-light);
-    font-size: 18px;
-    font-weight: 700;
-    text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-
-}
-
 .cta-button:hover {
     background-color: #0056b3;
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
 }
 
-.cta-button-contac:hover {
-    background-color: #2d8517;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(20, 201, 29, 0.4);
+.cta-button-cv {
+    display: inline-block;
+    padding: 8px 25px;
+    margin-top: 30px;
+    border-radius: 50px;
+    background-color: #0a65c5;
+    color: var(--background-light);
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
+
+.cta-button-cv:hover {
+    background-color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+}
+
 
 .hero-content {
     flex: 1 1 55%; 
@@ -306,25 +307,6 @@ section[id]{
     align-items: center;
     margin-bottom: 12px;
 }
-
-/* Media Queries para Responsividad */
-/* 
-
-Pantallas Medianas (a partir de 768px): 4 columnas 
-@media (min-width: 768px) {
-    .skills-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-/* Pantallas Grandes (a partir de 1024px): 6 columnas  
-@media (min-width: 1024px) {
-    .skills-grid {
-        grid-template-columns: repeat(6, 1fr);
-    }
-} 
-
-*/
 
 
 
