@@ -17,10 +17,10 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
     background-color: var(--background-soft);
     color: var(--text-dark);
     line-height: 1.6;
+    font-family: 'Inter', sans-serif;
 }
 
 html{
@@ -31,8 +31,135 @@ section[id]{
     scroll-margin-top: 70px;
 }
 
+/*___POPUP DE CONTACTO___*/
 
-/*BARRA DE NAVEGACIÓN*/
+#contact-popup[popover] {
+    border: none; 
+    padding: 0;
+    margin: 0;
+    position: fixed; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrado perfecto */
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4); /* Sombra elegante y fuerte */
+    width: 90%;
+    max-width: 350px; 
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+/* Estilos cuando el popover está abierto/mostrado */
+#contact-popup[popover]:popover-open {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* 3. Estilo de la Capa Oscura (Backdrop) */
+#contact-popup[popover]::backdrop {
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px); /* Desenfoque sutil del fondo */
+    transition: all 0.3s;
+}
+
+/* 4. Contenido Interno */
+.popup-content {
+    padding: 30px 25px; 
+    text-align: center;
+    position: relative; /* Para posicionar el botón de cerrar */
+}
+
+.popup-content h2 {
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 1.8em;
+}
+
+.popup-content p {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 1em;
+}
+
+/* Botón de cerrar (X) */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    background: none;
+    border: none;
+    padding: 5px;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: #000000; /* Rojo al pasar el ratón */
+}
+
+/* 5. Estilo de los Enlaces (Botones) */
+.contact-links {
+    display: flex;
+    flex-direction: column; 
+    gap: 15px; 
+}
+
+.contact-button {
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    color: #fff; 
+}
+
+.contact-button i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+/* Colores de las Marcas */
+.contact-button.linkedin {
+    background-color: #0A66C2; /* LinkedIn Blue */
+}
+
+.contact-button.linkedin:hover {
+    background-color: #074786;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(10, 102, 194, 0.5);
+}
+
+.contact-button.whatsapp {
+    background-color: #25D366; /* WhatsApp Green */
+}
+
+.contact-button.whatsapp:hover {
+    background-color: #199246; /* WhatsApp Green */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(37, 211, 102, 0.5);
+}
+
+.contact-button.gmail {
+    background-color: #EA4335; /* Google Red */
+}
+
+.contact-button.gmail:hover {
+    background-color: #D62A1F;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(234, 67, 53, 0.5);
+}
+
+/*-----------------------__BARRA DE NAVEGACIÓN__-----------------------*/
 .menu {
     background-color: var(--background-light);
     box-shadow: var(--shadow-light);
@@ -50,7 +177,6 @@ section[id]{
     font-size: 24px;
     color: var(--text-dark);
 }
-
 
 .menu-container {
     max-width: 1200px;
@@ -146,14 +272,16 @@ section[id]{
 
 .cta-button {
     display: inline-block;
-    padding: 12px 30px;
+    margin-bottom: 20px;
+    padding: 15px 38px;
     border-radius: 50px;
     background-color: #000000;
     color: var(--background-light);
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 600;
     text-decoration: none;
-    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+    box-shadow: none;
+    border: none;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
@@ -162,6 +290,28 @@ section[id]{
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
 }
+
+.cta-button-cont{
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 19px 38px;
+    border-radius: 50px;
+    background-color: #000000;
+    color: var(--background-light);
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: none;
+    border: none;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-button-cont:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
+}
+
 
 .cta-button-cv {
     display: inline-block;
@@ -182,6 +332,8 @@ section[id]{
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
 }
+
+ 
 
 
 .hero-content {
@@ -576,6 +728,7 @@ section[id]{
 
 
 /*RESPONSIVIDAD (MEDIA QUERIES)*/
+
 @media (max-width: 992px) {
 
     .menu-container {
@@ -618,7 +771,22 @@ section[id]{
 }
 
 /* --- Pantallas Móviles --- */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    .card-content {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 15px;
+    }
+    
+    .text-container {
+        text-align: center;
+    }
+    
+    .image-container {
+        margin: -50px 0 20px 0; /* Centra y ajusta el margen de la imagen */
+    }
+
+
     .menu-container,
     .hero-container,
     .container {
@@ -707,36 +875,15 @@ section[id]{
     .footer-contenedor {
         flex-direction: column;
     }
-}
 
-/* Media Query para mejor visualización en móviles */
-@media (max-width: 768px) {
-    .card-content {
-        flex-direction: column-reverse;
-        align-items: center;
-        gap: 15px;
-    }
-    
-    .text-container {
-        text-align: center;
-    }
-    
-    .image-container {
-        margin: -50px 0 20px 0; /* Centra y ajusta el margen de la imagen */
-    }
-}
-
-
-/* --- RESPONSIVIDAD: MOSTRAR EL BOTÓN EN MÓVIL --- */
-@media (max-width: 600px) {
-    /* 1. MUESTRA EL BOTÓN DE HAMBURGUESA */
+     /* 1. MUESTRA EL BOTÓN DE HAMBURGUESA */
     .menu-toggle {
         display: block;  
     }
 
     /* 2. REPOSICIONA Y ESTILIZA LOS ENLACES CUANDO SE MUESTRAN EN MÓVIL */
     .menu-links {
-        /* Los ocultaste con 'display: none', pero cuando JavaScript los muestre: */
+         
         display: none; /* Se mantiene oculto por defecto, JS lo cambiará */
         
         position: absolute;
@@ -760,5 +907,6 @@ section[id]{
     }
 }
 
+ 
 
 
